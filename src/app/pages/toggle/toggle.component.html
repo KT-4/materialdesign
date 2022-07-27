@@ -1,0 +1,37 @@
+<p>toggle works!</p>
+
+<div class="content">
+    <div class="row">
+         <div class="col-6">
+             <h2>EX.01 Sigle Button toggle</h2>
+             <mat-button-toggle  #myToggle (change)="onSingleButtonToggle($event)">{{myToggle.checked? 'Active' :'InActive'}}</mat-button-toggle>
+         
+            <h2>{{myToggle.checked}}</h2>
+             <br><br>
+         
+         </div>
+         <div class="col-6">
+            <h2>Ex.2</h2>
+                <mat-button-toggle-group #myGroup="matButtonToggleGroup">
+                     <mat-button-toggle value="left"><mat-icon>format_align_left</mat-icon></mat-button-toggle>
+                     <mat-button-toggle value="center"><mat-icon>format_align_center</mat-icon></mat-button-toggle>
+                     <mat-button-toggle value="right"><mat-icon>format_align_right</mat-icon></mat-button-toggle>
+                     <mat-button-toggle value="justify"><mat-icon>format_align_justify</mat-icon></mat-button-toggle>
+                </mat-button-toggle-group>
+
+ 
+                <h2>{{myGroup.value}}</h2><br>
+                <div [style.text-align]="myGroup.value">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, illum? Veniam aliquam optio aspernatur totam mollitia nulla porro nostrum aperiam assumenda iure ad sed dolorem doloribus ratione voluptatum, vero culpa?</div>
+         </div>
+         <div class="col-6">
+            <h2>Ex.3</h2>
+            <mat-button-toggle-group #myGroup2="matButtonToggleGroup" multiple>
+                <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+                <mat-button-toggle value="React">React</mat-button-toggle>
+                <mat-button-toggle value="Vue Js">Vue js</mat-button-toggle>
+                <mat-button-toggle value="Javascript">javaScript</mat-button-toggle>
+           </mat-button-toggle-group>
+           <h2>{{myGroup2.value}}</h2><br>
+         </div>
+    </div>
+</div>
